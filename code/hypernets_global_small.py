@@ -7,10 +7,15 @@ import autograd.numpy as np
 import autograd.numpy.random as npr
 from autograd import grad
 from autograd.misc.flatten import flatten
-from code.plotting import create_figure_and_axs, setup_ax_and_save
-from code.optimizers import adam, opt_params
-from code.data_loader import load_mnist
-from code.neural_network import init_random_params, log_gaussian, get_loss_functions
+# from code.plotting import create_figure_and_axs, setup_ax_and_save
+# from code.optimizers import adam, opt_params
+# from code.data_loader import load_mnist
+# from code.neural_network import init_random_params, log_gaussian, get_loss_functions
+from plotting import create_figure_and_axs, setup_ax_and_save
+from optimizers import adam, opt_params
+from data_loader import load_mnist
+from neural_network import init_random_params, log_gaussian, get_loss_functions
+
 
 graph_iters = 100000  # The number of iterations to do the optimization for (integer).
 log_likelihoods = np.zeros(graph_iters)  # An array of the log likelihoods (test loss) for each iteration.

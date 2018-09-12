@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 """Code to load data for experiments.
 """
-import urllib
+# import urllib
+# in python 3 must instead import specific modules of urllib:
+import urllib.request
 import os
 import gzip
 import struct
@@ -21,7 +23,13 @@ def download(url, filename):
         os.makedirs('data')
     out_file = os.path.join('data', filename)
     if not os.path.isfile(out_file):
-        urllib.urlretrieve(url, out_file)
+        # urllib.urlretrieve(url, out_file)
+
+        # When using Python 3, there is no urllib module anymore, so above original line won't work.
+        # It has been split into several modules.  Instead:
+        # import urllib.request
+        # data = urllib.request.urlretrieve("http://...")
+        urllib.request.urlretrieve(url, out_file)
 
 
 def mnist():
